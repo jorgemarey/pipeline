@@ -1,0 +1,28 @@
+{
+	"action": {
+		"vaultLogical": {
+			"issueCert" : {
+				"method": "write",
+				"path": "ica/issue/default",
+				"data": {
+					"common_name": "{{ .env.HOSTNAME }}",
+					"ip_sans": "{{ .env.PUBLIC_IP }},{{ .env.PRIVATE_IP }}"
+				}
+			}
+		},
+		"writeFile" : {
+			"writeCert": {
+				"file": "server.crt",
+				"value": "{{ .issueCert.Data.certificate }}"
+			},
+			"writeKey": {
+				"file": "server.key",
+				"value": "{{ .issueCert.Data.private_key }}"
+			},
+			"writeCA": {
+				"file": "ca.crt",
+				"value": "{{ .issueCert.Data.issuing_ca }}"
+			}
+		}
+	}
+}

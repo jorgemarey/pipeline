@@ -1,0 +1,5 @@
+package: pipev2
+import:
+- package: github.com/hashicorp/vault
+  subpackages:
+  - api

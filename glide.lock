@@ -1,0 +1,37 @@
+hash: 053e3514a1ab2c5f6369c431195e0350ed46871c8755453b6eb974b6c4b3d5e2
+updated: 2016-11-01T17:38:22.548075164+01:00
+imports:
+- name: github.com/fatih/structs
+  version: dc3312cb1a4513a366c4c9e622ad55c32df12ed3
+- name: github.com/hashicorp/errwrap
+  version: 7554cd9344cec97297fa6649b055a8c98c2a1e55
+- name: github.com/hashicorp/go-cleanhttp
+  version: ad28ea4487f05916463e2423a55166280e8254b5
+- name: github.com/hashicorp/go-multierror
+  version: 8c5f0ad9360406a3807ce7de6bc73269a91a6e51
+- name: github.com/hashicorp/go-rootcerts
+  version: 6bb64b370b90e7ef1fa532be9e591a81c3493e00
+- name: github.com/hashicorp/hcl
+  version: 8fa153c5b4e9d1ccecda7075821ffc7c1f6d912b
+  subpackages:
+  - hcl/ast
+  - hcl/parser
+  - hcl/token
+  - json/parser
+  - hcl/scanner
+  - hcl/strconv
+  - json/scanner
+  - json/token
+- name: github.com/hashicorp/vault
+  version: 181126994963b73d3ab444c74b161317de50d4f4
+  subpackages:
+  - api
+  - helper/jsonutil
+  - helper/compressutil
+- name: github.com/mitchellh/go-homedir
+  version: 756f7b183b7ab78acdbbee5c7f392838ed459dda
+- name: github.com/mitchellh/mapstructure
+  version: f3009df150dadf309fdee4a54ed65c124afad715
+- name: github.com/sethgrid/pester
+  version: 2a102734c18c43c74fd0664e06cd414cf9602b93
+devImports: []
