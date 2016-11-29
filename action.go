@@ -27,15 +27,23 @@ func NewWriteFileAction() Action {
 }
 
 type WriteFileAction struct {
-	File  string `json:"file"`
-	Value string `json:"value"`
+	File   string `json:"file"`
+	Value  string `json:"value"`
+	Append bool   `json:"append,omitempty"`
 }
 
 func (w *WriteFileAction) Execute() (Output, error) {
-	f, err := os.Create(w.File)
+	perm := os.O_CREATE | os.O_RDWR
+	if w.Append {
+		perm = perm | os.O_APPEND
+	} else {
+		perm = perm | os.O_TRUNC
+	}
+	f, err := os.OpenFile(w.File, perm, 0666)
 	if err != nil {
 		return nil, err
 	}
+	defer f.Close()
 	if _, err = f.WriteString(w.Value); err != nil {
 		return nil, err
 	}
