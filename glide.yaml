@@ -1,4 +1,4 @@
-package: pipev2
+package: pipeline
 import:
 - package: github.com/hashicorp/vault
   subpackages:

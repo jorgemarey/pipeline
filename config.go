@@ -27,6 +27,7 @@ func (a *ActionMap) UnmarshalJSON(data []byte) error {
 					return err
 				}
 				result[name] = action
+				fmt.Printf("Found action %s\n", name)
 			}
 		}
 	}
